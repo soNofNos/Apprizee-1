@@ -1,4 +1,3 @@
-
 // import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_apprizee/splash.dart';
@@ -11,13 +10,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   final bool look = prefs.getBool('look');
-Widget _screen;
-  if(look == null || look == false ){
+  Widget _screen;
+  if (look == null || look == false) {
     _screen = OnBoarding();
-  }else{
+  } else {
     _screen = Splash();
   }
-
 
   runApp(MyApp(_screen));
 }
